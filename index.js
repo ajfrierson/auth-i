@@ -71,7 +71,7 @@ server.post('/api/register', async (req, res) => {
 server.post('/api/login', authenticate, async (req, res) => {
   if (req.session.validated) {
     req.session.sessionId = req.sessionID;
-    res.status(200).json({message:"Logged In", cook:req.sessionID});
+    res.status(200).json({message:"Logged In", cookie:req.sessionID});
   } else {
     res.status(401).json({
       status: 401,
